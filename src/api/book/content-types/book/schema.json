@@ -1,16 +1,19 @@
 {
   "kind": "collectionType",
-  "collectionName": "products",
+  "collectionName": "books",
   "info": {
-    "singularName": "product",
-    "pluralName": "products",
-    "displayName": "product"
+    "singularName": "book",
+    "pluralName": "books",
+    "displayName": "book"
   },
   "options": {
     "draftAndPublish": true
   },
   "pluginOptions": {},
   "attributes": {
+    "name": {
+      "type": "string"
+    },
     "img": {
       "allowedTypes": [
         "images",
@@ -20,6 +23,12 @@
       ],
       "type": "media",
       "multiple": false
+    },
+    "authors": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::author.author",
+      "mappedBy": "books"
     }
   }
 }
