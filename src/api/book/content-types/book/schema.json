@@ -4,7 +4,8 @@
   "info": {
     "singularName": "book",
     "pluralName": "books",
-    "displayName": "book"
+    "displayName": "book",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -15,20 +16,36 @@
       "type": "string"
     },
     "img": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
       "allowedTypes": [
         "images",
         "files",
         "videos",
         "audios"
-      ],
-      "type": "media",
-      "multiple": false
+      ]
     },
     "authors": {
       "type": "relation",
       "relation": "manyToMany",
       "target": "api::author.author",
       "mappedBy": "books"
+    },
+    "summary": {
+      "type": "text"
+    },
+    "ogname": {
+      "type": "string"
+    },
+    "isbn": {
+      "type": "string"
+    },
+    "lang": {
+      "type": "string"
+    },
+    "pubdate": {
+      "type": "string"
     }
   }
 }

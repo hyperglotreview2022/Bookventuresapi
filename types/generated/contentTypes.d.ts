@@ -722,6 +722,7 @@ export interface ApiBookBook extends Schema.CollectionType {
     singularName: 'book';
     pluralName: 'books';
     displayName: 'book';
+    description: '';
   };
   options: {
     draftAndPublish: true;
@@ -734,6 +735,11 @@ export interface ApiBookBook extends Schema.CollectionType {
       'manyToMany',
       'api::author.author'
     >;
+    summary: Attribute.Text;
+    ogname: Attribute.String;
+    isbn: Attribute.String;
+    lang: Attribute.String;
+    pubdate: Attribute.String;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
