@@ -37,6 +37,9 @@
     },
     "isfiction": {
       "type": "boolean"
+    },
+    "iskids": {
+      "type": "boolean"
     }
   }
 }
