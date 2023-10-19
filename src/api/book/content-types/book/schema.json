@@ -46,6 +46,12 @@
     },
     "pubdate": {
       "type": "string"
+    },
+    "awards": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::award.award",
+      "mappedBy": "books"
     }
   }
 }

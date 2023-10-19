@@ -718,6 +718,43 @@ export interface ApiAuthorAuthor extends Schema.CollectionType {
   };
 }
 
+export interface ApiAwardAward extends Schema.CollectionType {
+  collectionName: 'awards';
+  info: {
+    singularName: 'award';
+    pluralName: 'awards';
+    displayName: 'award';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    title: Attribute.String;
+    img: Attribute.Media;
+    books: Attribute.Relation<
+      'api::award.award',
+      'manyToMany',
+      'api::book.book'
+    >;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::award.award',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::award.award',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiBookBook extends Schema.CollectionType {
   collectionName: 'books';
   info: {
@@ -742,6 +779,11 @@ export interface ApiBookBook extends Schema.CollectionType {
     isbn: Attribute.String;
     lang: Attribute.String;
     pubdate: Attribute.String;
+    awards: Attribute.Relation<
+      'api::book.book',
+      'manyToMany',
+      'api::award.award'
+    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -769,6 +811,7 @@ declare module '@strapi/types' {
       'plugin::users-permissions.role': PluginUsersPermissionsRole;
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
       'api::author.author': ApiAuthorAuthor;
+      'api::award.award': ApiAwardAward;
       'api::book.book': ApiBookBook;
     }
   }
