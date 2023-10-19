@@ -40,6 +40,9 @@
     },
     "iskids": {
       "type": "boolean"
+    },
+    "isIndian": {
+      "type": "boolean"
     }
   }
 }
