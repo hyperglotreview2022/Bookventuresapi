@@ -730,7 +730,7 @@ export interface ApiAwardAward extends Schema.CollectionType {
     draftAndPublish: true;
   };
   attributes: {
-    title: Attribute.String;
+    name: Attribute.String;
     img: Attribute.Media;
     books: Attribute.Relation<
       'api::award.award',
