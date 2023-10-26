@@ -700,6 +700,7 @@ export interface ApiAuthorAuthor extends Schema.CollectionType {
     isfiction: Attribute.Boolean;
     iskids: Attribute.Boolean;
     isIndian: Attribute.Boolean;
+    isNobleWinner: Attribute.Boolean;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

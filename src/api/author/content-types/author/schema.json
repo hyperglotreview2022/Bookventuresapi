@@ -43,6 +43,9 @@
     },
     "isIndian": {
       "type": "boolean"
+    },
+    "isNobleWinner": {
+      "type": "boolean"
     }
   }
 }
