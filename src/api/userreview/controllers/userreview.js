@@ -1,9 +1,9 @@
 'use strict';
 
 /**
- * singin controller
+ * userreview controller
  */
 
 const { createCoreController } = require('@strapi/strapi').factories;
 
-module.exports = createCoreController('api::singin.singin');
+module.exports = createCoreController('api::userreview.userreview');

@@ -1,9 +1,9 @@
 'use strict';
 
 /**
- * singin router
+ * userreview router
  */
 
 const { createCoreRouter } = require('@strapi/strapi').factories;
 
-module.exports = createCoreRouter('api::singin.singin');
+module.exports = createCoreRouter('api::userreview.userreview');

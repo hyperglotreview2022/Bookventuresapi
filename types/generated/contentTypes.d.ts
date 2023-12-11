@@ -786,6 +786,11 @@ export interface ApiBookBook extends Schema.CollectionType {
       'manyToMany',
       'api::award.award'
     >;
+    userreviews: Attribute.Relation<
+      'api::book.book',
+      'oneToMany',
+      'api::userreview.userreview'
+    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -796,31 +801,36 @@ export interface ApiBookBook extends Schema.CollectionType {
   };
 }
 
-export interface ApiSinginSingin extends Schema.CollectionType {
-  collectionName: 'singins';
+export interface ApiUserreviewUserreview extends Schema.CollectionType {
+  collectionName: 'userreviews';
   info: {
-    singularName: 'singin';
-    pluralName: 'singins';
-    displayName: 'signin';
+    singularName: 'userreview';
+    pluralName: 'userreviews';
+    displayName: 'userreview';
     description: '';
   };
   options: {
     draftAndPublish: true;
   };
   attributes: {
-    name: Attribute.String;
-    email: Attribute.Email;
+    comment: Attribute.Text;
+    stars: Attribute.Integer;
+    book: Attribute.Relation<
+      'api::userreview.userreview',
+      'manyToOne',
+      'api::book.book'
+    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<
-      'api::singin.singin',
+      'api::userreview.userreview',
       'oneToOne',
       'admin::user'
     > &
       Attribute.Private;
     updatedBy: Attribute.Relation<
-      'api::singin.singin',
+      'api::userreview.userreview',
       'oneToOne',
       'admin::user'
     > &
@@ -847,7 +857,7 @@ declare module '@strapi/types' {
       'api::author.author': ApiAuthorAuthor;
       'api::award.award': ApiAwardAward;
       'api::book.book': ApiBookBook;
-      'api::singin.singin': ApiSinginSingin;
+      'api::userreview.userreview': ApiUserreviewUserreview;
     }
   }
 }

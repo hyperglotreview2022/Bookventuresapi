@@ -1,9 +1,9 @@
 'use strict';
 
 /**
- * singin service
+ * userreview service
  */
 
 const { createCoreService } = require('@strapi/strapi').factories;
 
-module.exports = createCoreService('api::singin.singin');
+module.exports = createCoreService('api::userreview.userreview');
